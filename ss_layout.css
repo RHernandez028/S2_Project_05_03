@@ -15,36 +15,93 @@
 
 
 /* Article Styles */
+/* Here the article elemtent and all in it will be floated to the left of the document and will have a width of 384px. */
 article{
-    margin-left: 384px;
+    float: left;
+    width: 384px;
+}
+
+/* First Line and Drop Cap Styles */
+/* In the folowing two selectors the psudo selectors are used to get only the first type of the assigned element. In this first one the pseudo class first line selector also call only the first line of the first type of element. Specifically the changes are the size of the font and the font's look.   */
+article > p:first-of-type::first-line{
+    font-size: 1.25em;
+    font-variant: small-caps;
+}
+
+/* Similarlly to the first, the first letter of the forst of type makes the changes of font size family, where the element floats, the space between hieghts and finally the margin on the botm and the right of the element.   */
+article > p:first-of-type::first-letter{
+    font-size: 4em;
+    font-family: serif;
+    float: left;
+    line-height: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+
+}
+
+/* Aside Styles */
+/*  Here the aside element is set to a width of 786px and floated to its left margin. */
+aside {
+    width: 768px;
+    float: left;
+}
+
+/* Map Styles */
+/* Here the the div has an id selector witch call only ine element with the specific id and makes the width 688px, margin 20px on the top and bottom but auto on left and right. The postion of relative places the div at the spot it would normally at the top right of the element */
+div#battleMap {
+    position: relative;
+    width: 688px;
+    margin: 20px auto 20px auto;   
+}
+
+/* Here I used the child of to make sure that I was specific to what I wanted to have changed but also the ids alone would do the trick. */
+div#battlemap > img#mapImage {
+    display: block;
+    width: 100%;
+
+}
+
+/* Interactive Map Styles */
+/* The absolute the element is placed in the top right conrner of the elemtn that it is a direct child of . */
+a.battleMarkers {
+    position: absolute;
+}
+/* Each anchor element has a different id selector becuse ech elemtn needs to go some where differnt and the top an left tell are coorinates frokm the top left corner.  */
+a#marker1{
+    top: 220px;
+    left: 340px;
+}
+a#marker2{
+    top: 194px;
+    left: 358px;
+}
+a#marker3{
+    top: 202px;
+    left: 400px;
+}
+a#marker4{
+    top: 217px;
+    left: 452px;
+}
+a#marker5{
+    top: 229px;
+    left: 498px;
+}
+a#marker6{
+    top: 246px;
+    left: 544px;
 }
 
 
 
-
-
-/* First Line and Drop Cap Styles */
-
-
-
- 
-
-/* Aside Styles */
-
-
-
-
-/* Map Styles */
-
-
-
-
-/* Interactive Map Styles */
-
-
-
-
 /* Map Information Styles */
+/* Here the following blocks make it so when a user hovers over the star that correspnds with the text that is linked to it. And when the user hivers iff of it then the text is no longer visible. */
+div.mapInfo{
+    display: none;
+}
 
+a.battleMarkers:hover + div.mapInfo {
+    display: block;
+}
 
 
